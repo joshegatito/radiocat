@@ -1,0 +1,106 @@
+/* Configuración básica y restablecimiento de márgenes y rellenos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del cuerpo principal */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://img.freepik.com/vector-premium/fondo-fiesta-halloween-calabaza-brillante-casa-terror_30996-5247.jpg'); /* Cambia esto por la URL de tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #333; /* Color de texto oscuro para contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: calc(28px + 2vmin); /* Tamaño de fuente dinámico */
+    color: #fff; /* Color del título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada para el título */
+}
+
+.radio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tamaño mínimo para pantallas pequeñas */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+}
+
+.radio {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad para suavizar el fondo */
+    border-radius: 15px; /* Bordes más redondeados */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+}
+
+.radio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el ratón */
+}
+
+.radio img {
+    width: 96px; /* Ancho fijo para preservar resolución */
+    height: 66px; /* Altura fija para preservar resolución */
+    object-fit: contain; /* Ajusta la imagen sin deformar */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Contenedor de botón centrado */
+.button-container {
+    margin-top: 10px; /* Espacio superior para los botones */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px; /* Relleno más cómodo */
+    font-size: 2rem; /* Tamaño de fuente más grande y adaptable */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Sombra sutil en el botón */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+i {
+    font-size: 1.5rem; /* Ajusta el tamaño del ícono */
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+    .radio {
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    button {
+        font-size: 1.5rem; /* Reduce el tamaño de los botones */
+    }
+
+    i {
+        font-size: 1.2rem; /* Reduce el tamaño de los íconos */
+    }
+}
