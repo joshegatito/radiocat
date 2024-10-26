@@ -24,6 +24,12 @@ const radioStations = [
         url: 'https://24293.live.streamtheworld.com/CRP_LI_SC?csegid=20001&dist=20001&ttag=20001'
     },
     {
+        id: 'la-kalle',
+        name: 'Radio La Kalle',
+        image: 'https://cdn.instant.audio/images/logos/radios-com-pe/kalle.png',
+        url: 'https://lakalle.egostreaming.pe/radio/a7b9c3e4567f8d0123456789/'
+    },
+    {
         id: 'onda-cero',
         name: 'Radio Onda Cero',
         image: 'https://cdn.instant.audio/images/logos/radios-com-pe/onda.png',
@@ -79,10 +85,12 @@ function togglePlay(radioId, url) {
     }
 
     if (audioPlayers[radioId]) {
+        // Si ya está reproduciendo, detén el audio
         audioPlayers[radioId].pause();
         delete audioPlayers[radioId];
         updateButtonIcon(false);
     } else {
+        // Si no está reproduciendo, crea un nuevo audio
         const audio = new Audio(url);
         audioPlayers[radioId] = audio;
 
@@ -93,15 +101,19 @@ function togglePlay(radioId, url) {
 
         updateButtonIcon(true);
 
+        // Detener el audio si se abre otro
         Object.keys(audioPlayers).forEach((key) => {
             if (key !== radioId) {
                 audioPlayers[key].pause();
-                delete audioPlayers[key];
                 const otherButton = document.querySelector(`#${key} button i`);
-                updateButtonIcon.call(otherButton, false);
+                delete audioPlayers[key];
+                // Cambiar el icono del otro botón a play
+                otherButton.classList.remove('fa-stop');
+                otherButton.classList.add('fa-play');
             }
         });
 
+        // Cuando el audio termine, eliminarlo de la lista y cambiar el icono
         audio.addEventListener('ended', () => {
             delete audioPlayers[radioId];
             updateButtonIcon(false);

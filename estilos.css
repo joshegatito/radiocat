@@ -1,106 +1,89 @@
-/* Configuración básica y restablecimiento de márgenes y rellenos */
-* {
-    box-sizing: border-box;
+/* Fuente personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    background-image: url('https://img.freepik.com/vector-premium/fondo-fiesta-halloween-calabaza-brillante-casa-terror_30996-5247.jpg'); /* Fondo de Halloween */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Creepster', cursive;
+    text-align: center;
     margin: 0;
     padding: 0;
-}
-
-/* Estilos del cuerpo principal */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-image: url('https://img.freepik.com/vector-premium/fondo-fiesta-halloween-calabaza-brillante-casa-terror_30996-5247.jpg'); /* Cambia esto por la URL de tu imagen */
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    color: #333; /* Color de texto oscuro para contraste */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-size: calc(28px + 2vmin); /* Tamaño de fuente dinámico */
-    color: #fff; /* Color del título */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada para el título */
+    font-size: calc(10px + 2vmin);
 }
 
 .radio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Tamaño mínimo para pantallas pequeñas */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
     max-width: 1000px;
-    width: 100%; /* Asegura que el contenedor ocupe el 100% del ancho disponible */
+    width: 100%;
+    margin: auto; /* Centrar el contenedor */
 }
 
 .radio {
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad para suavizar el fondo */
-    border-radius: 15px; /* Bordes más redondeados */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
     padding: 20px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-    border: 1px solid #e0e0e0; /* Borde sutil */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 5px solid #ff6347; /* Borde atractivo */
 }
 
 .radio:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el ratón */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .radio img {
-    width: 96px; /* Ancho fijo para preservar resolución */
-    height: 66px; /* Altura fija para preservar resolución */
-    object-fit: contain; /* Ajusta la imagen sin deformar */
+    width: 96px;
+    height: 66px;
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
-/* Contenedor de botón centrado */
-.button-container {
-    margin-top: 10px; /* Espacio superior para los botones */
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
 button {
-    background-color: #007bff;
+    background-color: #ff6347;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 12px; /* Relleno más cómodo */
-    font-size: 2rem; /* Tamaño de fuente más grande y adaptable */
+    padding: 12px;
+    font-size: 2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Sombra sutil en el botón */
+    box-shadow: 0 4px 10px rgba(255, 100, 100, 0.3);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ffa07a;
     transform: scale(1.05);
 }
 
-i {
-    font-size: 1.5rem; /* Ajusta el tamaño del ícono */
+/* Estilos para los murciélagos */
+.bat {
+    position: fixed;
+    width: calc(80px + 2vmin);
+    height: calc(80px + 2vmin);
+    background-image: url('bat.png'); /* Asegúrate de tener una imagen de murciélago */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fly 10s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
 }
 
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 600px) {
-    .radio {
-        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+@keyframes fly {
+    0% {
+        transform: translate(-10%, 10px) scale(1) rotate(0deg);
     }
-
-    button {
-        font-size: 1.5rem; /* Reduce el tamaño de los botones */
+    50% {
+        transform: translate(110vw, 100px) scale(1.2) rotate(45deg);
     }
-
-    i {
-        font-size: 1.2rem; /* Reduce el tamaño de los íconos */
+    100% {
+        transform: translate(-10%, 200px) scale(1) rotate(0deg);
     }
 }

@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Reproductor de Radios</title>
+    <title>💀 Radio Cat Halloween 🎃</title>
 </head>
 <body>
-    <h1>Reproductor de Radios</h1>
+    <h1>💀 Radio Cat Halloween 🎃</h1>
     <div class="radio-container"></div> <!-- Contenedor vacío para el reproductor de radios -->
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Llamar a la función para crear murciélagos
+        window.onload = createBats;
+
+        function createBats() {
+            const numberOfBats = 5; // Número de murciélagos que deseas crear
+            for (let i = 0; i < numberOfBats; i++) {
+                const bat = document.createElement('div');
+                bat.className = 'bat';
+                // Establece posiciones aleatorias
+                bat.style.top = Math.random() * 100 + 'vh';
+                bat.style.left = Math.random() * 100 + 'vw';
+                // Duración de la animación aleatoria
+                bat.style.animationDuration = (5 + Math.random() * 5) + 's';
+                document.body.appendChild(bat);
+            }
+        }
+    </script>
 </body>
 </html>
