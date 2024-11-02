@@ -21,7 +21,7 @@ const radioStations = [
         id: 'la-inolvidable',
         name: 'Radio La Inolvidable',
         image: 'https://cdn.instant.audio/images/logos/radios-com-pe/inolvidable.png',
-        url: 'https://24293.live.streamtheworld.com/CRP_LI_SC?csegid=20001&dist=20001&ttag=20001'
+        url: 'https://26653.live.streamtheworld.com/CRP_LI_SC?csegid=20001&dist=20001&ttag=20001'
     },
     {
         id: 'la-kalle',
